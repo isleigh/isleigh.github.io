@@ -2,6 +2,6 @@
 layout: default
 title: About
 ---
-# About page
+# All about Tom
 
 This page tells you a little bit about Tom and the services he provides.

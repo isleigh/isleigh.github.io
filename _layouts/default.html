@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- Security Metadata -->
+    <!-- Security Metadata 
  
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
    
@@ -10,6 +10,30 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="google" content="notranslate">
+    -->
+
+    <!-- 2. Content Security Policy (CSP) 
+         Prevents XSS by only allowing scripts and styles from your own site ('self').
+         Add other domains (like fonts.googleapis.com) as needed. -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self'; 
+                   style-src 'self' 'unsafe-inline'; 
+                   img-src 'self' data:; 
+                   upgrade-insecure-requests;">
+
+    <!-- 3. Referrer Policy 
+         Protects user privacy by not sending the full URL to third-party sites -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- 4. Permissions Policy 
+         Disables browser features that your site doesn't need to prevent misuse -->
+    <meta http-equiv="Permissions-Policy" 
+          content="camera=(), microphone=(), geolocation=(), payment=()">
+
+    <!-- 5. MIME Sniffing Prevention 
+         Tells the browser to trust the 'Content-Type' and not try to guess it -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
 
     <title>{{ page.title }}</title>
